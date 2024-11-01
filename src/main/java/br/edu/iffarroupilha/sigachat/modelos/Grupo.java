@@ -1,4 +1,4 @@
-package br.edu.iffarroupilha.sigachat.modelo;
+package br.edu.iffarroupilha.sigachat.modelos;
 
 import java.util.Set;
 import java.util.UUID;

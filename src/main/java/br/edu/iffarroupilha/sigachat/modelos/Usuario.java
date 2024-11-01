@@ -1,4 +1,4 @@
-package br.edu.iffarroupilha.sigachat.modelo;
+package br.edu.iffarroupilha.sigachat.modelos;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;

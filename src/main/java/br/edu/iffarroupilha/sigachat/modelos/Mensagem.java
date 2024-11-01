@@ -1,7 +1,8 @@
-package br.edu.iffarroupilha.sigachat.modelo;
+package br.edu.iffarroupilha.sigachat.modelos;
 
 import java.util.Date;
 
+import br.edu.iffarroupilha.sigachat.modelos.dto.MensagemDTO;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -14,6 +15,21 @@ import jakarta.persistence.TemporalType;
 
 @Entity
 public class Mensagem {
+	
+	
+	public Mensagem() {
+	
+	}
+	
+	public Mensagem(MensagemDTO dto) {
+		this.idMensagem = dto.idMensagem();
+		this.conteudo = dto.conteudo();
+		this.remetente = dto.remente();
+		this.destinatario = dto.destinatario();
+		this.grupoDestinatario = dto.grupoDestinatario();
+		this.data = dto.data();
+	}
+	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long idMensagem;
@@ -32,6 +48,8 @@ public class Mensagem {
 	@Column(nullable = false)
 	@Temporal(TemporalType.TIMESTAMP)
 	private Date data;
+	
+	
 	public long getIdMensagem() {
 		return idMensagem;
 	}
