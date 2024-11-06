@@ -14,9 +14,15 @@ import br.edu.iffarroupilha.sigachat.modelos.repositorios.Mensagemrepositorio;
 * @since Nov 1, 2024 8:02:00 PM
 */
 @Service
-public class MensagemService {
-	@Autowired
+public class MensagemService extends AService{
+	
 	private Mensagemrepositorio repositorio;
+	
+	public MensagemService(Mensagemrepositorio repositorio) {
+		super(repositorio);
+		this.repositorio = repositorio;
+	}
+	
 	
 	/**
 	 * <p>

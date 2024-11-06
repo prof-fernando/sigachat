@@ -17,22 +17,15 @@ import br.edu.iffarroupilha.sigachat.modelos.repositorios.UsuarioRepositorio;
  * @since Nov 1, 2024 7:54:13 PM
  */
 @Service
-public class UsuarioService {
-	@Autowired
+public class UsuarioService extends AService {
+	
 	private UsuarioRepositorio repositorio;
 
-//	public UsuarioService(UsuarioRepositorio repositorio) {
-//		this.repositorio = repositorio;
-//	}
-	/**
-	 * <p>
-	 * Salva ou atualiza um objeto no banco de dados
-	 * </p>
-	 */
-	public Usuario salvar(Usuario usuario) {
-
-		return this.repositorio.save(usuario);
+	public UsuarioService(UsuarioRepositorio repositorio) {
+		super(repositorio);
+		this.repositorio = repositorio;
 	}
+	
 
 	/**
 	 * <p>

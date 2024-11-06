@@ -15,7 +15,7 @@ import lombok.Setter;
  * @author Professor
  */
 @Entity
-public class Usuario {
+public class Usuario implements IEntidade {
 	@Id
 	private String email;
 	@Column(nullable = false)

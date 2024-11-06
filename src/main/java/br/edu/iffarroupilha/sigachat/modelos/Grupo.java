@@ -3,6 +3,7 @@ package br.edu.iffarroupilha.sigachat.modelos;
 import java.util.Set;
 import java.util.UUID;
 
+import br.edu.iffarroupilha.sigachat.modelos.dto.GrupoDTO;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -14,7 +15,7 @@ import jakarta.persistence.ManyToMany;
 import jakarta.persistence.ManyToOne;
 
 @Entity
-public class Grupo {
+public class Grupo implements IEntidade{
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -30,6 +31,17 @@ public class Grupo {
 			joinColumns = @JoinColumn(name = "idGrupo"), inverseJoinColumns = @JoinColumn(name = "email_usuario"))
 	private Set<Usuario> participantes;
 
+	public Grupo() {
+	
+	}
+	public Grupo(GrupoDTO dto) {
+		this.idGrupo = dto.idGrupo();
+		this.nome = dto.nome();
+		this.proprietario = dto.proprietario();
+	}
+	
+	
+	
 	public long getIdGrupo() {
 		return idGrupo;
 	}

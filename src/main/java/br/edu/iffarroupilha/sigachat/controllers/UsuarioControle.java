@@ -43,7 +43,7 @@ public class UsuarioControle {
 		Usuario u = new Usuario();
 		u.setEmail(dto.email());
 		u.setNome(dto.nome());
-		return ResponseEntity.status(HttpStatus.CREATED).body(servico.salvar(u));
+		return ResponseEntity.status(HttpStatus.CREATED).body(servico.gravar(u));
 	}
 
 	@GetMapping

@@ -14,7 +14,7 @@ import jakarta.persistence.Temporal;
 import jakarta.persistence.TemporalType;
 
 @Entity
-public class Mensagem {
+public class Mensagem implements IEntidade {
 	
 	
 	public Mensagem() {
