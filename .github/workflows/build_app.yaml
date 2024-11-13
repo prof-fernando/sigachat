@@ -11,3 +11,10 @@ jobs:
   steps:
   - name: baixar codigo fonte
     uses: actions/checkout@v4
+  - name: empacotar app
+    uses: actions/setup-java@v4
+    with:
+     distribution: 'oracle'
+     java-version: '21'
+  - name: executando maven
+    run: mvn clean install
