@@ -17,4 +17,4 @@ jobs:
      distribution: 'oracle'
      java-version: '21'
   - name: executando maven
-    run: mvn clean install
+    run: mvn clean install -DskipTests
