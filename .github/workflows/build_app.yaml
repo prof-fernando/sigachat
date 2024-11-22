@@ -18,3 +18,7 @@ jobs:
      java-version: '21'
   - name: executando maven
     run: mvn clean install -DskipTests
+  - name: construir imagem docker
+    run: docker build -t proffernando/sigachat .
+  - name: login Dockerhub
+    run: docker login -u ${{secrets.DK_USER}} -p ${{DK_PASS}}

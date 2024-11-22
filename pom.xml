@@ -10,7 +10,7 @@
 	</parent>
 	<groupId>br.edu.iffarroupilha</groupId>
 	<artifactId>sigachat</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>1.0.0</version>
 	<name>sigachat</name>
 	<description>Sistema de bate papo online</description>
 	<url/>
