@@ -25,3 +25,8 @@ jobs:
   - name: Envio da imagem
     run: docker push proffernando/sigachat
 
+ instalacao_aws:
+  runs-on: self-hosted
+  steps:
+  - name: pegar o app
+    run: docker pull proffernando/sigachat
