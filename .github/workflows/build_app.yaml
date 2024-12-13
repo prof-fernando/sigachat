@@ -27,6 +27,7 @@ jobs:
 
  instalacao_aws:
   runs-on: self-hosted
+  needs: construcao-app
   steps:
   - name: pegar o app
     run: sudo docker pull proffernando/sigachat
