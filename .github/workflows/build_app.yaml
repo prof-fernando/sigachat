@@ -40,4 +40,3 @@ jobs:
   steps:
   - name: pegar o app
     run: sudo docker pull proffernando/sigachat
-	
