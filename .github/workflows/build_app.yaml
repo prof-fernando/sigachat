@@ -41,4 +41,4 @@ jobs:
   - name: pegar o app
     run: sudo docker pull proffernando/sigachat
   - name: inicia os servicos
-    run: sudo docker compose up
+    run: sudo docker compose up -d
