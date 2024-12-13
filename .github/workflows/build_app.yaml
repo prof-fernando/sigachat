@@ -24,6 +24,15 @@ jobs:
     run: docker login -u ${{secrets.DK_USER}} -p '${{secrets.DK_PASS}}'
   - name: Envio da imagem
     run: docker push proffernando/sigachat
+  - name: copy file via ssh key
+    uses: appleboy/scp-action@v0.1.7
+    with:
+     host: ec2-15-229-231-119.sa-east-1.compute.amazonaws.com
+     username: ubuntu
+     port: 22
+     key: ${{ secrets.KEY }}
+     source: "docker-compose.yaml"
+     target: "/home/ubuntu/"
  
  deploy:
   needs: construcao-app
