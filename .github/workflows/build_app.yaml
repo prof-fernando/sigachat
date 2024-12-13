@@ -30,6 +30,6 @@ jobs:
   runs-on: self-hosted
   steps:
    - name: download image docker
-     run: docker pull proffernando/sigachat
+     run: sudo docker pull proffernando/sigachat
    - name: subir a imagem
      run: mkdir pastanova
