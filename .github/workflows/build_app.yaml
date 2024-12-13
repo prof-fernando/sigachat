@@ -29,4 +29,4 @@ jobs:
   runs-on: self-hosted
   steps:
   - name: pegar o app
-    run: docker pull proffernando/sigachat
+    run: sudo docker pull proffernando/sigachat
