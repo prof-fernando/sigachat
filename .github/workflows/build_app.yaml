@@ -24,4 +24,12 @@ jobs:
     run: docker login -u ${{secrets.DK_USER}} -p '${{secrets.DK_PASS}}'
   - name: Envio da imagem
     run: docker push proffernando/sigachat
-
+ 
+ deploy:
+  needs: construcao-app
+  runs-on: self-hosted
+  steps:
+   - name: download image docker
+     run: docker pull proffernando/sigachat
+   - name: subir a imagem
+     run: mkdir pastanova
