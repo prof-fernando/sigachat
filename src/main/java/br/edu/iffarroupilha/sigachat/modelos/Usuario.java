@@ -1,10 +1,18 @@
 package br.edu.iffarroupilha.sigachat.modelos;
 
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.List;
+
+import org.hibernate.annotations.Collate;
+import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
+import org.springframework.security.core.userdetails.UserDetails;
+
+import br.edu.iffarroupilha.sigachat.modelos.dto.UsuarioDTO;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
-import lombok.Getter;
-import lombok.Setter;
 
 /**
  * <p>
@@ -15,15 +23,27 @@ import lombok.Setter;
  * @author Professor
  */
 @Entity
-public class Usuario implements IEntidade {
+public class Usuario implements IEntidade, UserDetails {
 	@Id
 	private String email;
 	@Column(nullable = false)
 	private String nome;
+	@Column(nullable  = false)
 	private String senha;
 	private String foto;
 	private String status;
 	
+	
+	public Usuario() {
+	}
+	
+	public Usuario(UsuarioDTO dto) {
+		this.nome = dto.nome();
+		this.email = dto.email();
+		this.senha = dto.senha();
+		this.status = dto.status();
+		this.foto = dto.foto();
+	}
 	
 	
 	public String getNome() {
@@ -55,6 +75,21 @@ public class Usuario implements IEntidade {
 	}
 	public void setStatus(String status) {
 		this.status = status;
+	}
+	
+	public Collection<? extends GrantedAuthority> getAuthorities() {
+		List permissoes = new ArrayList();
+		permissoes.add(new SimpleGrantedAuthority( "ROLE_USER"));
+		//permissoes.add(new SimpleGrantedAuthority( "ROLE_ADMIN"));
+		return permissoes;
+	}
+	
+	public String getPassword() {
+		return this.senha;
+	}
+	
+	public String getUsername() {
+		return this.email;
 	}
 	
 	
