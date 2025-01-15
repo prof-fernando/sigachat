@@ -35,9 +35,9 @@ public class Grupo implements IEntidade{
 	
 	}
 	public Grupo(GrupoDTO dto) {
-		this.idGrupo = dto.idGrupo();
+	this.idGrupo = dto.id();
 		this.nome = dto.nome();
-		this.proprietario = dto.proprietario();
+	
 	}
 	
 	

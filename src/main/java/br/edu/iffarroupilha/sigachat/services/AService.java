@@ -1,5 +1,7 @@
 package br.edu.iffarroupilha.sigachat.services;
 
+import java.util.List;
+
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import br.edu.iffarroupilha.sigachat.modelos.IEntidade;
@@ -32,6 +34,26 @@ public abstract class AService {
 	 */
 	public <T extends IEntidade> T  gravar( IEntidade entidade) {
 		return (T) repositorio.save( entidade );
+	}
+	
+	/**
+	 * <p>
+	 * Apaga um registro do banco
+	 * </p>
+	 * @param entidade a ser apagada
+	 */
+	public void  apagar( IEntidade entidade) {
+		repositorio.delete( entidade );
+	}
+	/**
+	 * <p>
+	 * Lista todos os registros de uma entidade
+	 * </p>
+	 * @param entidade a ser apagada
+	 */
+	public List  listar( ) {
+		return this.repositorio.findAll();
+		
 	}
 	
 }

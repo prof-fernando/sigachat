@@ -8,7 +8,7 @@ import br.edu.iffarroupilha.sigachat.modelos.Usuario;
 * @author Professor
 * @since Nov 6, 2024 7:34:05 PM
 */
-public record GrupoDTO (long idGrupo, 
-		 Usuario proprietario, String nome) {
+public record GrupoDTO (long id, 
+		 String email, String nome) {
 
 }
