@@ -52,7 +52,7 @@ public class SpringUserFilter extends OncePerRequestFilter {
 			
 			SecurityContextHolder.getContext().setAuthentication(auth);
 		}
-		doFilter(request, response, filterChain);
+		filterChain.doFilter(request, response);
 	}
 
 	private String extraiTokenFromRequest(HttpServletRequest request) {

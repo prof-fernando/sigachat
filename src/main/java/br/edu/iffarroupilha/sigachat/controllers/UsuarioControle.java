@@ -45,7 +45,7 @@ public class UsuarioControle {
 		u.setNome(dto.nome());
 		return ResponseEntity.status(HttpStatus.CREATED).body(servico.gravar(u));
 	}
-
+	
 	@GetMapping
 	public ResponseEntity<List<Usuario>> listar() {
 		return ResponseEntity.status(HttpStatus.OK).body(servico.buscarTodos());
